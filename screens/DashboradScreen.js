@@ -1,36 +1,56 @@
 import React from "react";
 import {
-  View,
-  Text,
-  StyleSheet,
   Image,
   ImageBackground,
   ScrollView,
+  StyleSheet,
+  Text,
   TouchableOpacity,
+  View,
 } from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons';
 
 const DashboardScreen = () => {
   return (
     <ImageBackground
-      source={require("../assets/Images/dashboardBg.png")} // Replace with the correct path to your background image
+      source={require("../assets/Images/dashBg.png")} // Replace with the correct path to your background image
       style={styles.background}
+      
     >
       <ScrollView contentContainerStyle={styles.scrollView}>
+        <View style={styles.header}>
+          <Image
+            source={require("../assets/Images/dashSun.png")}
+            style={{ width: 30, height: 30 }}
+          />
+          <Image
+            source={require("../assets/Images/dashStar.png")}
+            style={{ width: 30, height: 30 }}
+          />
+        </View>
         <View style={styles.container}>
-          <View style={styles.header}>
-            <Icon name="sunny-outline" size={24} color="#fff" />
-            <Icon name="star-outline" size={24} color="#fff" />
-          </View>
           <View style={styles.greetingContainer}>
             <Text style={styles.greeting}>Hello, Alice!</Text>
             <Text style={styles.subGreeting}>Welcome back.</Text>
           </View>
           <View style={styles.buttonsContainer}>
-            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Calm</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Focus</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Relax</Text></TouchableOpacity>
-            <TouchableOpacity style={styles.button}><Text style={styles.buttonText}>Breathe</Text></TouchableOpacity>
+            <ScrollView
+              horizontal
+              contentContainerStyle={styles.buttonsContainer}
+              showsHorizontalScrollIndicator={false}
+            >
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Calm</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Focus</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Relax</Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Breathe</Text>
+              </TouchableOpacity>
+            </ScrollView>
           </View>
           <Text style={styles.sectionTitle}>Recommended Collections</Text>
           
@@ -46,10 +66,12 @@ const styles = StyleSheet.create({
   },
   scrollView: {
     flexGrow: 1,
+    marginTop: 30,
+    padding: 20,
   },
   container: {
     flex: 1,
-    padding: 20,
+    marginTop: 350,
   },
   header: {
     flexDirection: "row",
@@ -60,33 +82,37 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   greeting: {
-    fontSize: 32,
+    fontSize: 60,
     color: "#fff",
     fontWeight: "bold",
   },
   subGreeting: {
-    fontSize: 28,
+    fontSize: 50,
     color: "#fff",
   },
   buttonsContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     marginBottom: 20,
   },
   button: {
-    backgroundColor: "#235968",
+    backgroundColor: "#5E8E9EC9",
     borderRadius: 20,
     paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingHorizontal: 25,
+    marginEnd: 10,
   },
   buttonText: {
     color: "#fff",
     fontSize: 16,
+    fontWeight: "400",
   },
   sectionTitle: {
     fontSize: 20,
     color: "#fff",
-    marginBottom: 10,
+    marginVertical: 20,
+    width:'50%',
+    fontWeight:'bold'
   },
   card: {
     backgroundColor: "#fff",
