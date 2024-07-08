@@ -39,6 +39,8 @@ const styles = StyleSheet.create({
   container: {
     alignItems: "center",
     marginVertical: 20,
+    height:100,
+    justifyContent:'center'
   },
   numberList: {
     justifyContent: "center",
@@ -55,7 +57,6 @@ const styles = StyleSheet.create({
     borderRadius: 5,
     backgroundColor: "#F1F5F9", // Add background color for selected number
     paddingHorizontal: 30, // Add padding to make it appear as a box
-    marginVertical:220
   },
   numberText: {
     fontSize: 24,
