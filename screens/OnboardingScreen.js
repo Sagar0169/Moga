@@ -75,7 +75,7 @@ const steps = [
 export default function OnboardingScreen({ navigation }) {
   const [currentStep, setCurrentStep] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
-  const [selectedNumber, setSelectedNumber] = useState(6); // Default number
+  const [selectedNumber, setSelectedNumber] = useState(4); // Default number
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleNext = () => {
@@ -154,7 +154,7 @@ export default function OnboardingScreen({ navigation }) {
             />
           )}
           {currentStepData.type === "numberPicker" && (
-            <View style={{ flex: 1 }}>
+            <View style={{ flex: 1,justifyContent:'center' }}>
               <NumberPicker
                 min={currentStepData.min}
                 max={currentStepData.max}

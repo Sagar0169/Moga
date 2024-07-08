@@ -64,9 +64,10 @@ export default function WelcomeScreen({ navigation }) {
     >
       <View
         style={{
-          marginTop: 200,
+          flex:1,
           marginHorizontal: 20,
           alignItems: "flex-start",
+          justifyContent:'center',
         }}
       >
         <Text style={styles.title}>Welcome to</Text>
